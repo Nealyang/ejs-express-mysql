@@ -20,7 +20,7 @@ $(document).ready(function () {
                     password: password
                 },
                 success: function (response) {
-                    window.location.href = '/admin';
+                    window.location.replace('/admin');
                 },
                 error: function (response) {
                     if (JSON.parse(response.responseText).code == 500) {

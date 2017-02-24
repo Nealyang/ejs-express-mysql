@@ -13,6 +13,8 @@ module.exports = function () {
         }
     });
     router.use('/login',require('./login')());
+    router.use('/blog',require('./blog')());
+    router.use('/users',require('./users')());
     router.get('/',function (req,res) {
         res.render('admin/index.ejs');
     });

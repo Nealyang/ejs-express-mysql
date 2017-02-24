@@ -23,6 +23,7 @@
 }
 
 .menu span{
+    color: #fff;
     font-size: 25px;
     display: inline-block;
     text-align: center;
@@ -39,4 +40,7 @@
     -moz-border-radius:5px;
     border-radius:5px;
     cursor: pointer;
+}
+.on_select{
+    box-shadow: 4px 9px 10px #020202;
 }

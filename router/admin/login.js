@@ -1,11 +1,11 @@
 /**
  * Created by Nealyang on 17/2/24.
  */
-var express = require('express');
-var mysql = require('mysql');
-var common = require('../../lib/common');
+const express = require('express');
+const mysql = require('mysql');
+const common = require('../../lib/common');
 
-var db = mysql.createPool({host:'localhost',port:3306,user:'root',password:' neal',database:'blog'});
+const db = mysql.createPool({host:'localhost',port:3306,user:'root',password:' neal',database:'blog'});
 
 module.exports = function () {
     var router = express.Router();
