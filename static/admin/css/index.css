@@ -1,0 +1,42 @@
+.header{
+    width: 100%;
+    height: 120px;
+    background: url("/admin/img/login_bg.png") no-repeat center;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.header p{
+    font-size: 32px;
+    font-family: fantasy;
+    margin-left: 5%;
+}
+.menu{
+    height: 80px;
+    font-family: fantasy;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+    margin-left: 30%;
+}
+
+.menu span{
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 2px 2px 2px #6d5d5d;
+    background:-moz-linear-gradient(left,#a1655a,#2e4a53);/*火狐*/
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#b8c4cb), to(#f6f6f8));/*谷歌*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#0000ff));      /* Safari 4-5, Chrome 1-9*/
+    background: -webkit-linear-gradient(left, #a1655a, #2e4a53);   /*Safari5.1 Chrome 10+*/
+    background: -o-linear-gradient(left, #a1655a, #2e4a53);  /*Opera 11.10+*/
+    height: 40px;
+    line-height: 46px;
+    padding:0px 20px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    cursor: pointer;
+}

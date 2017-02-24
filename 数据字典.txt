@@ -1,0 +1,19 @@
+1、管理员   admin_table
+    ID          int
+    username    varchar(32)
+    password    varchar(32)
+
+2、用户   user_table
+    ID          int
+    username    varchar(32)
+    email       varchar(32)
+    pic_header  varchar(300)
+
+3、博客     blog_table
+    ID          int
+    summary     varchar(500)
+    content     text
+    author      varchar(32)
+    href        varchar(300)
+    post_time   timestamp
+    n_view      int
