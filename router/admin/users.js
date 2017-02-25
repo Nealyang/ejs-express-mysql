@@ -31,7 +31,8 @@ module.exports = function () {
                                 console.error(err);
                                 res.status(500).send({code:500,msg:'operate err'});
                             } else {
-                                db.query('DELETE FROM user_table WHERE ID="'+req.query.id+'"',function (err,resultData) {
+                                db.query('DELETE FROM user_table WHERE ID="'+
+                                    req.query.id+'"',function (err,resultData) {
                                     if(err){
                                         console.error(err);
                                         res.status(500).send({code: 500, msg: 'database error'});
@@ -105,7 +106,9 @@ module.exports = function () {
                                         console.error(err);
                                         res.status(500).send({code: 500, msg: 'operate error'});
                                     } else {
-                                        db.query('UPDATE user_table SET username="'+username+'",email="' + email + '",pic_header="' + pic_header + '" WHERE ID="'+req.body.modified+'"',function (err,data) {
+                                        db.query('UPDATE user_table SET username="'+
+                                            username+'",email="' + email + '",pic_header="' +
+                                            pic_header + '" WHERE ID="'+req.body.modified+'"',function (err,data) {
                                             if (err) {
                                                 console.error(err);
                                                 res.status(500).send({code: 500, msg: 'database error'});
@@ -120,7 +123,8 @@ module.exports = function () {
                     }
                 })
             }else{
-                db.query('UPDATE user_table SET username="'+username+'",email="' + email + '" WHERE ID="'+req.body.modified+'"',function (err,data) {
+                db.query('UPDATE user_table SET username="'+username+'",email="' + email + '" WHERE ID="'+
+                    req.body.modified+'"',function (err,data) {
                     if (err) {
                         console.error(err);
                         res.status(500).send({code: 500, msg: 'database error'});
@@ -135,7 +139,8 @@ module.exports = function () {
                     console.error(err);
                     res.status(500).send({code: 500, msg: 'data error'});
                 } else {
-                    db.query('INSERT INTO user_table (username,email,pic_header) VALUE("' + username + '","' + email + '","' + pic_header + '")', function (err, resultData) {
+                    db.query('INSERT INTO user_table (username,email,pic_header) VALUE("' + username + '","' +
+                        email + '","' + pic_header + '")', function (err, resultData) {
                         if (err) {
                             console.error(err);
                             res.status(500).send({code: 500, msg: 'database error'});
