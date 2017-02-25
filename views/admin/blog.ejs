@@ -3,8 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>后台管理-博客管理</title>
+    <link rel="stylesheet" href="/files/admin/css/blog.css">
+    <script type="text/javascript" src="http://himg2.huanqiu.com/statics/hq2013/js/lib/jquery1.9.1.js"></script>
+    <script src="/files/admin/js/blog.js"></script>
 </head>
 <body>
-<% include common/top.ejs%>
+<% include common/top.ejs %>
+<div class="add_button">
+    <img src="/files/admin/img/add.png">
+</div>
+<div class="add_form">
+    <img src="/files/admin/img/add.png">
+    <div class="form_bg"></div>
+    <form action="?" method="post">
+        标题: <input type="text" name="title" autofocus="autofocus"><br>
+        作者: <input type="text" name="author"><br>
+        摘要: <textarea name="summary"></textarea><br>
+        链接: <input type="text" name="href"><br>
+        <input type="submit" value="添加">
+    </form>
+</div>
+<%if(typeof modData != 'undefined'){%>
+<div class="add_form" style="display: flex">
+    <img src="/files/admin/img/add.png">
+    <div class="form_bg"></div>
+    <form action="?" method="post">
+        <input type="hidden" name="modified" value="<%= modData[0].ID %>">
+        标题: <input type="text" name="title" autofocus="autofocus" value="<%=modData[0].title%>"><br>
+        作者: <input type="text" name="author" value="<%=modData[0].author%>"><br>
+        摘要: <textarea name="summary"><%=modData[0].summary%></textarea><br>
+        链接: <input type="text" name="href" value="<%=modData[0].href%>"><br>
+        <input type="submit" value="确认修改">
+    </form>
+</div>
+<%}%>
+<table>
+    <tr>
+        <th class="id">ID</th>
+        <th class="title">标题</th>
+        <th class="author">作者</th>
+        <th class="summary">摘要</th>
+        <th class="href">链接</th>
+        <th class="operation">操作</th>
+    </tr>
+    <% for(var i = 0;i<formData.length;i++){%>
+    <tr>
+        <td><%=formData[i].ID%></td>
+        <td><%=formData[i].title%></td>
+        <td><%=formData[i].author%></td>
+        <td><%=formData[i].summary%></td>
+        <td><%=formData[i].href%></td>
+        <td>
+            <a href="?action=del&id=<%=formData[i].ID%>" onclick="confirm('确定删除？')">
+                <button>删除</button>
+            </a>
+            <a href="?action=mod&id=<%=formData[i].ID%>">
+                <button>修改</button>
+            </a>
+        </td>
+    </tr>
+    <%}%>
+</table>
 </body>
 </html>

@@ -11,9 +11,7 @@
 
 3、博客     blog_table
     ID          int
+    title       varchar(200)
     summary     varchar(500)
-    content     text
     author      varchar(32)
     href        varchar(300)
-    post_time   timestamp
-    n_view      int

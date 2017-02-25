@@ -40,6 +40,13 @@
     -moz-border-radius:5px;
     border-radius:5px;
     cursor: pointer;
+    position: relative;
+    bottom:0;
+    -webkit-transition: bottom .3s;
+    -moz-transition: bottom .3s;
+    -ms-transition: bottom .3s;
+    -o-transition: bottom .3s;
+    transition: bottom .3s,box-shadow .3s;
 }
 .on_select{
     box-shadow: 4px 9px 10px #020202;
