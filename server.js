@@ -41,7 +41,6 @@ server.use(cookieParser('Neal_signed'));
 server.set('view engine','html');
 server.set('views','./views');
 server.engine('html',consolidate.ejs);
-
 //设置路由
 server.use('/admin',require('./router/admin/index')());
 server.use('/',require('./router/web/index')());

@@ -34,6 +34,8 @@ module.exports = function () {
                     if(err){
                         console.error(err);
                         res.status(500).send({code:500,msg:'database error'});
+                    }else if(modData.length == 0){
+                        res.status(400).send({code:400,msg:'parameters error'});
                     }else{
                         db.query('SELECT * FROM blog_list_table',function (err,allData) {
                             if(err){

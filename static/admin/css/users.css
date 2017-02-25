@@ -1,0 +1,100 @@
+.add_button{
+    height: 50px;
+    width: 100px;
+    background:-moz-linear-gradient(left,#a1655a,#2e4a53);/*火狐*/
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#b8c4cb), to(#f6f6f8));/*谷歌*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#0000ff));      /* Safari 4-5, Chrome 1-9*/
+    background: -webkit-linear-gradient(left, #a1655a, #2e4a53);   /*Safari5.1 Chrome 10+*/
+    background: -o-linear-gradient(left, #a1655a, #2e4a53);  /*Opera 11.10+*/
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: fixed;
+    left:-50px;
+    top:300px;
+    cursor: pointer;
+    -webkit-transition: left .5s;
+    -moz-transition: left .5s;
+    -ms-transition: left .5s;
+    -o-transition: left .5s;
+    transition: left .5s;
+}
+.add_button img{
+    width: 50%;
+    transform: rotate(0deg);
+    position: relative;
+    right:0;
+    -webkit-transition: right .5s,transform,.5s;
+    -moz-transition: right .5s,transform,.5s;
+    -ms-transition: right .5s,transform,.5s;
+    -o-transition: right .5s,transform,.5s;
+    transition: right .5s,transform,.5s;
+}
+.form_bg{
+    background-color: #000;
+    opacity: .5;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+}
+.add_form{
+    justify-content: center;
+    display: none;
+}
+.add_form img{
+    width: 50px;
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    transform: rotate(45deg);
+    right: 37%;
+    margin-top: 33px;
+}
+.add_form form{
+    position: fixed;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 100px;
+    line-height: 55px;
+}
+table{
+    width: 100%;
+}
+table .id{
+    width: 7%;
+}
+table .title{
+    width: 25%;
+}
+table .author{
+    width: 8%;
+}
+table .summary{
+    width: 30%;
+
+}
+table .href{
+    width: 20%;
+}
+table tr:first-child{
+    background-color: #ddd;
+    height: 30px;
+    line-height: 30px;
+}
+table tr{
+    text-align: center;
+    border-bottom: solid 2px #ddd;
+}
+table td{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+table img{
+    width:40px;
+    height: auto;
+}

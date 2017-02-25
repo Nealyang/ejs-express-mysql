@@ -54,7 +54,7 @@
         <td><%=formData[i].summary%></td>
         <td><%=formData[i].href%></td>
         <td>
-            <a href="?action=del&id=<%=formData[i].ID%>" onclick="confirm('确定删除？')">
+            <a href="?action=del&id=<%=formData[i].ID%>" onclick="return confirm('确定删除？')">
                 <button>删除</button>
             </a>
             <a href="?action=mod&id=<%=formData[i].ID%>">

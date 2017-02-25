@@ -3,8 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>后台管理-用户管理</title>
+    <link rel="stylesheet" href="/files/admin/css/users.css">
+    <script type="text/javascript" src="http://himg2.huanqiu.com/statics/hq2013/js/lib/jquery1.9.1.js"></script>
+    <script src="/files/admin/js/users.js"></script>
 </head>
 <body>
 <% include common/top.ejs%>
+<div class="add_button">
+    <img src="/files/admin/img/add.png">
+</div>
+<div class="add_form">
+    <img src="/files/admin/img/add.png">
+    <div class="form_bg"></div>
+    <form action="?" method="post" enctype="multipart/form-data">
+        用户名: <input type="text" name="username" autofocus="autofocus"><br>
+        邮箱: <input type="email" name="email"><br>
+        头像: <input type="file" name="pic_header"><br>
+        <input type="submit" value="添加">
+    </form>
+</div>
+<%if(typeof modData != 'undefined'){%>
+<div class="add_form" style="display: flex">
+    <img src="/files/admin/img/add.png">
+    <div class="form_bg"></div>
+    <form action="?" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="modified" value="<%= modData[0].ID %>">
+        用户名: <input type="text" name="username" autofocus="autofocus" value="<%=modData[0].username%>"><br>
+        邮箱: <input type="email" name="email" value="<%=modData[0].email%>"><br>
+        头像: <input type="file" name="pic_header"><br>
+        <input type="submit" value="确认修改">
+    </form>
+</div>
+<%}%>
+<table>
+    <tr>
+        <th class="id">ID</th>
+        <th class="title">名字</th>
+        <th class="author">邮箱</th>
+        <th class="summary">头像</th>
+        <th class="operation">操作</th>
+    </tr>
+    <% for(var i = 0;i<usersData.length;i++){%>
+    <tr>
+        <td><%=usersData[i].ID%></td>
+        <td><%=usersData[i].username%></td>
+        <td><%=usersData[i].email%></td>
+        <td><img src="<%=usersData[i].pic_header%>" alt=""></td>
+        <td>
+            <a href="?action=del&id=<%=usersData[i].ID%>" onclick="return confirm('确定删除？')">
+                <button>删除</button>
+            </a>
+            <a href="?action=mod&id=<%=usersData[i].ID%>">
+                <button>修改</button>
+            </a>
+        </td>
+    </tr>
+    <%}%>
+</table>
 </body>
 </html>
