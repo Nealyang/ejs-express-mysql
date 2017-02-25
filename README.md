@@ -17,13 +17,15 @@ ejs-express-mysql
 >ejs mysql nodejs express express-router...
 
 ##效果图
+
+登录页
+![登录页](./resources/login.png)
+
 整体操作流程图
 ![操作图](./resources/show.gif)
 
 **GIF Brewery转gif真的有点。。。好吧，不吐槽了，后面会分开讲解每一步，好在基本操作还能看得清~**
 
-登录页
-![登录页](./resources/login.png)
 
 后台管理首页
 ![后台管理首页](./resources/index.png)
